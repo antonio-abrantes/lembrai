@@ -41,7 +41,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 💙 Autor
 
-Desenvolvido com amor e dedicação por [Antonio Abrantes](https://github.com/antonioabrantes).
+Desenvolvido com amor e dedicação por [Antonio Abrantes](https://github.com/antonio-abrantes).
 
 ## Falta implementar
 
