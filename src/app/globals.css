@@ -1,0 +1,19 @@
+/* Esconde o X quando a classe estiver presente */
+.close-button-hidden button[aria-label="Close"] {
+  display: none !important;
+}
+
+/* Resto dos estilos para mobile */
+@media (max-width: 560px) {
+  .dialog-overlay {
+    background: white !important;
+  }
+
+  .dialog-content {
+    min-height: 100vh !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+} 
