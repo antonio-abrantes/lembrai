@@ -104,7 +104,7 @@ export function Login() {
         <div className="w-[320px] space-y-6">
           <div className="text-center">
             <div className="flex items-center justify-center">
-              <img src="/icon.ico" alt="LembrAi" className="w-8 h-8" />
+              <img src="/assets/logo.png" alt="LembrAi" className="w-8 h-8" />
               <h1 className="text-2xl font-bold ml-1">LembrAi</h1>
             </div>
             <p className="text-muted-foreground">

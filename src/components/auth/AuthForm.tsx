@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import type { AuthFormData } from '@/types/auth';
 import { AvatarInput } from './AvatarInput';
+import { ESTADOS_BRASILEIROS } from '@/lib/constants';
 
 const formSchema = z.object({
   email: z.string().email('Email inválido'),
@@ -143,12 +144,17 @@ export function AuthForm({ onSubmit, isLoading, type }: AuthFormProps) {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input 
-                        placeholder="UF" 
-                        maxLength={2}
+                      <select
                         {...field}
-                        onChange={(e) => field.onChange(e.target.value.toUpperCase())}
-                      />
+                        className="w-full rounded-md border border-input bg-background px-3 py-2"
+                      >
+                        <option value="">Estado</option>
+                        {ESTADOS_BRASILEIROS.map((estado) => (
+                          <option key={estado.uf} value={estado.uf}>
+                            {estado.uf} - {estado.nome}
+                          </option>
+                        ))}
+                      </select>
                     </FormControl>
                     <FormMessage />
                   </FormItem>

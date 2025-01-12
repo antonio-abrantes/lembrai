@@ -15,13 +15,14 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
+  FormMessage
 } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/contexts/auth';
 import { AvatarInput } from './auth/AvatarInput';
 import { UserProfile } from '@/contexts/auth';
+import { ESTADOS_BRASILEIROS } from '@/lib/constants';
 
 const profileSchema = z.object({
   full_name: z.string().min(3, 'Nome completo é obrigatório'),
@@ -186,12 +187,17 @@ export function ProfileModal({ open, onOpenChange }: ProfileModalProps) {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input 
-                        placeholder="UF" 
-                        maxLength={2}
+                      <select
                         {...field}
-                        onChange={(e) => field.onChange(e.target.value.toUpperCase())}
-                      />
+                        className="w-full rounded-md border border-input bg-background px-3 py-2"
+                      >
+                        <option value="">Estado</option>
+                        {ESTADOS_BRASILEIROS.map((estado) => (
+                          <option key={estado.uf} value={estado.uf}>
+                            {estado.uf} - {estado.nome}
+                          </option>
+                        ))}
+                      </select>
                     </FormControl>
                     <FormMessage />
                   </FormItem>

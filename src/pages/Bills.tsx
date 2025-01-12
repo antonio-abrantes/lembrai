@@ -200,7 +200,7 @@ export function Bills() {
     <div className="container mx-auto w-full space-y-6 p-4 container-bills">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <img src="/icon.ico" alt="LembrAi" className="w-8 h-8" />
+          <img src="/assets/logo.png" alt="LembrAi" className="w-8 h-8" />
           <h1 className="text-2xl font-bold ml-1">LembrAi - Minhas Contas</h1>
         </div>
         <span className="mr-1">
